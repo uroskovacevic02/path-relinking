@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Internal planning notes (not part of the project repo)
+docs/superpowers/
+
+# OS / editor junk
+.DS_Store
+Thumbs.db

@@ -63,3 +63,18 @@ def path_relink(instance, init, guide):
 def path_relink_backward(instance, init, guide):
     # backward = relink in the opposite direction
     return path_relink(instance, guide, init)
+
+
+def path_relink_back_and_forward(instance, init, guide):
+    # run both directions, keep whichever found the better tour
+    fb, fc = path_relink(instance, init, guide)
+    bb, bc = path_relink(instance, guide, init)
+
+    if fb is None:          # forward found nothing -> take backward
+        return bb, bc
+    if bb is None:          # backward found nothing -> take forward
+        return fb, fc
+
+    if fc <= bc:            # both found something -> take the cheaper one
+        return fb, fc
+    return bb, bc

@@ -58,3 +58,8 @@ def path_relink(instance, init, guide):
             best = current[:]
 
     return best, best_cost
+
+
+def path_relink_backward(instance, init, guide):
+    # backward = relink in the opposite direction
+    return path_relink(instance, guide, init)

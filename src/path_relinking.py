@@ -75,7 +75,7 @@ def path_relink_back_and_forward(instance, init, guide):
     if bb is None:          
         return fb, fc
 
-    if fc <= bc:            # take cheaper one
+    if fc <= bc:            
         return fb, fc
     return bb, bc
 
@@ -84,15 +84,15 @@ def path_relink_mixed(instance, init, guide):
     dist = instance.dist
     n = len(init)
 
-    a = init[:]            # starts at init, moves toward b
-    b = guide[:]           # starts at guide, moves toward a
+    a = init[:]            
+    b = guide[:]           
     cost_a = instance.tour_cost(a)
     cost_b = instance.tour_cost(b)
 
     best = None
     best_cost = float("inf")
 
-    move_a = True          # whose turn it is to move this step
+    move_a = True          
 
     while a != b:
         # pick the moving tour and its target (the other tour)
@@ -134,11 +134,10 @@ def path_relink_mixed(instance, init, guide):
         else:
             cost_b = current_cost
 
-        # remember the best intermediate (not the two original endpoints)
         if current_cost < best_cost and current != init and current != guide:
             best_cost = current_cost
             best = current[:]
 
-        move_a = not move_a   # alternate sides
+        move_a = not move_a   
 
     return best, best_cost

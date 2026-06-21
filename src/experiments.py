@@ -1,9 +1,3 @@
-"""
-experiments.py - compares plain GRASP and the PR variants across instances.
-
-For each instance and each method we run several seeds and report the
-average / best tour length, the average gap to the known optimum, and time.
-"""
 
 import os
 import sys
@@ -14,7 +8,6 @@ sys.path.insert(0, os.path.dirname(__file__))
 from tsp import load_tsplib
 from grasp import grasp_pr
 
-# folders (relative to the project root)
 BASE = os.path.dirname(os.path.dirname(__file__))
 DATA = os.path.join(BASE, "data")
 RESULTS = os.path.join(BASE, "results")

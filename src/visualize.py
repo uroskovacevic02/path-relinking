@@ -1,14 +1,12 @@
 import os
 import sys
-
-sys.path.insert(0, os.path.dirname(__file__))
-
-import matplotlib
-matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from tsp import load_tsplib
-from grasp import grasp_pr
+plt.switch_backend("Agg")        
+
+sys.path.insert(0, os.path.dirname(__file__))
+from tsp import load_tsplib      
+from grasp import grasp_pr       
 
 BASE = os.path.dirname(os.path.dirname(__file__))
 RESULTS = os.path.join(BASE, "results")

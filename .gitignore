@@ -11,6 +11,20 @@ env/
 # Internal planning notes (not part of the project repo)
 docs/superpowers/
 
+# Document sources (only the resulting PDF goes to the repo)
+docs/make_pdf.py
+docs/dokumentacija.tex
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+
+# Local tools
+.tools/
+
 # OS / editor junk
 .DS_Store
 Thumbs.db
